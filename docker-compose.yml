@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  comiccraft:
+    build: .
+    container_name: comiccraft-app
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=ComicCraft
+      - ENVIRONMENT=development
+      - AI_PROVIDER=mock
+      - IMAGE_PROVIDER=mock
+      - STORAGE_DIR=storage
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./storage:/app/storage
